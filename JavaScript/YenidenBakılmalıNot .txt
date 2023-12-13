@@ -1,0 +1,42 @@
+Api Nedir?                                 NOT::EXECUTE = UYGULAMAK
+API veya Uygulama Programlama Arayüzü, farklı uygulamalar arasında etkileşime ve iletişime izin veren işlevler ve kurallar sunar.
+
+XML,JSON Nedir?
+Veri değişim formatlarıdır.
+
+Rest API Nedir?
+REST API, geliştiricilerin HTTP protokolünü kullanarak GET ve POST gibi isteklerde bulunup, bu isteklere çeşitli formatlarda yanıt aldığı bir dağıtık sistemdir.
+REST (REpresentatZonal State Transfer), Temsili Durum Aktarımı olarak Türkçede de kullanılır.
+REST’in tüm prensiplerini yerine getiren API’ler ise RESTful olarak nitelendirilir. 
+
+BAĞIMSIZ::
+async,await anahtar kelimeleri nedir,javascript'teki yeri
+FONKSİYONLARA BAK,KAPSAM OLAYLARI,
+window scope, tüm javascript nesnelerinin temel kapsamıdır ve bildirmeden önce 'var' anahtar kelimesi kullanmadığımız sürece tanımladığımız her değişkene otomatik olarak eklenir.
+Bu durumda değişkenin kapsamı local'dir.(Bu window içinde olduğu anlamına gelir)
+
+JavaScript Prompt Nedir?
+JavaScript'te kullanıcıdan veri almak iki farklı şekilde yapılır.Birisi prompt komutuyla diğeri ise form yollu ile bilgi alınır.
+Form HTML üzerinde yer almsı, Prompt komutunda ekrana küçük diyalog pencere açılması olarak bilinir.
+Ex. let değisken=window.prompt('Mesaj','Varsayılan Değer')
+
+Kullanıcı 'Tamam' a tıklarsa giriş değeri döndürülür,Kullanıcı giriş yapmdan 'Tamam' a tıklarsa boş string döner.
+giriş yapmış olsa dahi 'Cancel' a tıklarsa null döner
+
+Prompt metodu ile girilen bilgi string türünde algılanır
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

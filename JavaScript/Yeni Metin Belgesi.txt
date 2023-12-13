@@ -1,0 +1,635 @@
+ilk 6 gün
+//Eklentilerden Live Server eklenerek kodun çalıştırılması için sağ tık open with live server diyoruz-->
+// terminalde code . ile vs code açılır
+//intelliSense ile birlikte emmet kullanılmsı emmet div>ul>li*5 gibi olan şey
+// ctrl alt ile çoklu seçim 
+// control p ile dosyaalr arasında gezinmek
+// ctrl b ile panel açıp kapatma
+// ctrl w ile dosya kapatılır
+// ctrl alt ile çoklu seçim 
+// control p ile dosyaalr arasında gezinmek
+// ctrl b ile panel açıp kapatma
+// ctrl w ile dosya kapatılır
+// ctrl s ile kaydeder
+// mini map özelliği de otomatik olarak mevcut
+// view de bir kaç tane klasör açabiliyoruz
+// termşnalde code proje ile proje açılır
+// ctrl enter ile bir alta satıra geçerli
+// ctrl alt birden fazla satırda çalışaabiliriz
+// esc ile kapatılır
+// alt shift ile seçim kolaylaştırışlır
+// ctrl d ile aymı olan seçilir
+// multi cursor diye geçiyor coğu özellik
+// yardım klavye kısayolları ulaşılabşkr
+// ctrl p ile dosyalar arasında gezilir
+// ctrl shift p ile ayarlar acılır
+// ctrl shift f ile satrı aralıkları hepsi dizayn edilir
+
+//yazıyı aşağı taşımak için seçilip aşağı taşınırasa alta gelir
+//alt shift aşağı ile kopyalama yapılabilri
+//ctrl yön ile kelime kelime geçilir
+//snippets for yazınca yapının komple gelmesi gibi kendimiz de ekleyebiliyoruz
+// ctrl ö ile yorum satırı
+
+//DAY---1
+console.log("Hello World!","Merhaba Dünya")
+console.log('')
+console.log("")
+console.log(``)
+
+//VERİ TÜRLERİ
+console.log(typeof 'prototurk')
+console.log(typeof 8)
+console.log(typeof true)
+console.log(typeof null)
+console.log(typeof undefined)
+console.log(typeof 5.4)
+
+/*Çoklu Yorum*/
+//tekli yorum
+
+//DEĞİŞKENLER
+
+//Var,let ya da const ile anahtar kelimeleri kullanılır
+//Değişebilen değerler let ile
+//Sabit değişken için const
+//var pek kullanılmıyor artık
+
+//Değişken adlandırma
+//first-name,1_num,num_#_1 GEÇERSİZ olanlar $ veya _ başa gelebilir
+let Name="faruk"
+console.log(Name)
+const pi=3.14
+console.log(pi)
+//pi=5.14
+let a=5,b=6,c=7
+console.log(a+b+c)
+
+let isim='özkan', //Tek let ile isimlendirme yapılmış
+    yas='22',
+    dtarih='30.12.1999'
+
+
+
+//DAY--2
+
+//Primitive Data Types--İlkel Veri Türleri--immutable değiştirilemez--Elemanları değiştirilemez
+//Number,Strings,Booleans,Null,Undefined
+//Non-Primitive Data Types
+//Objects,Functions,Arrays
+
+//NOT::Primitive veri türleri değerlerine göre karşılaştırılabilir
+let numOne=3
+let numTwo=3
+console.log(numOne==numTwo) //True
+
+let js='javascript'
+let py='python'
+console.log(js==py) //False
+
+let degismez = 'değişmeyecek'
+degismez[0] = 'Y' //Değişmeyecek
+
+
+//NoN-Primitive Veri Türleri
+let nums=[1,2,23,4,'b',6,[1,1,1],7] //Dizi değerleri indekslerine göre referans alınır.
+console.log(nums)
+nums[2]=3 //Mutable olduğundan değişecek-NonPrimitive
+console.log(nums)
+console.log(nums[6])
+
+//NOT::NonPrimitive veri türleri değerlerine göre karşılaştırılamaz
+//NOT::NonPrimitive veri türleri referanslarına göre karşılaştırılabilir
+let numbers=[1,2,3]
+let nums1=[1,2,3]
+console.log(numbers==nums1) //False
+
+//OBJELER VERİ TİPİDİR
+//Key-Value çifti ile çalışırlar
+let user1={
+    isim :'faruk',
+    yas: 50,
+}
+let user2={
+    isim:"faruk",
+    yas:50
+}
+console.log("Karşılaştırma:",user1==user2) //False
+
+//NOT::İLKEL OLMAYAYAN VERİ TÜRLERİ KARŞILAŞTIRILAMAZ SONUÇ FALSE OLUR 
+//Nasıl eşit olur
+let nums5=[1,2,3,4]
+let nums6=nums5
+console.log(nums5==nums6)//True
+
+//NUMBER VERİ TÜRLERİ
+//Tamsayı ve ondalıklı sayıları belirtmek için kullanırız
+let age=23
+const grav=9.81
+
+
+//Math Objeleri
+Math.PI//pi değişkeni 
+Math.round()//Normal yuvarlama
+Math.ceil()//tavana yuvarlama
+Math.floor()//tabana yuvarlama
+Math.sqrt()//karekök alma
+Math.pow(3,2)//üs alma 3**2 şeklinde de kullanımı mümkündür
+Math.E 
+Math.log
+Math.sin
+Math.cos
+Math.tan
+
+console.log(Math.round(5.49))
+console.log(Math.max(4,5,6,8,7,1,0,-5))
+console.log(Math.min(4,5,6,8,7,1,0,-5))
+//Sıfırla bir arası rastgele sayı üretmek 11 ile çarpılınca sayı 1-10 arasına alınmış olacak
+let sasyi=Math.floor(Math.random()*11) 
+console.log(sasyi)
+
+//String Concatanation----> eski yol 
+let n='özkan'
+let s=`taşkıran`
+let space=` `
+let f=n + space + s
+console.log(f)
+console.log(f + 23 + "yaşı\ndayım\n neler oluyor")
+
+//  \n altsatır
+//  \t tab boşluk
+//  \\ backslash 
+//  \' tek tırnak
+//  \" çift tırnak
+
+//TEMPLATE STRİNGS İNTERPOLSTİON METHOD ES6
+//Backtick ile mümkündür
+//Çok satırlı dize yazımı sağlar
+//metin içinde değişken kullanmamızı sağlar
+let is='Kemal'
+let so='Sarıyıldız'
+
+let full=`Merhabalar ben ${is} ${so}   23    yaşındayım` //BACKTİCK KULLANILMIŞTIR
+console.log(full)
+
+let k= 5
+let l=10
+let toplam=`k+l=${k+l}`
+let toplama=`${k}+${l}=${k+l}`
+console.log(toplam)
+console.log(toplama)
+console.log('*-*-*-*-*-*-*-*-*-*-*-*')
+
+
+
+//Ternary Conditionals For JavaScript
+console.log(`${l} is greater than ${k} : ${l<k}`)
+
+
+//STRİNG METODLARI
+let java='JavaScript'
+java.length
+let li = java[java.length-1]
+console.log(java.length-1)
+console.log(li)
+
+
+let dz=['t','a','ş','k','ı','r','a','n']
+console.log(dz.length)
+son=dz.length-1
+console.log(dz[son])
+
+
+//Büyük Haref çevirme toUpperCase()
+//küçük Harfe çevirme toLowerCase()
+let cev=java.toUpperCase()
+console.log(cev)
+let ce='KemalSarıyıldız'.toUpperCase()
+console.log(ce)
+
+
+
+//substr() belirli kelime indeksli kısmı alma
+//substring() sonuncuyu almaz (2,5) 5.alınmıyor
+let h='faikcemgüler'
+let h1=h.substr(2,4)
+console.log(h1)
+
+
+//Split()---->Bölme Parçalama
+let kim='Özkan Taşkıran'
+let dizim=kim.split("")
+console.log(kim.split(" "))
+console.log(dizim)
+
+//trim()--->baştaki ve sondaki boşlukları siler
+let j='taşkıran'
+let u=j.split("")
+let pr=u.reverse()
+let fr=u.join('')
+console.log(fr)
+
+//Alt metin  stringin içinde varsa true döndürür yoksa false döndürür büyük küçük harfe duyarlıdır.
+let m='mehmet tosun'
+console.log(m.includes('tosun'))
+
+//replace(oldsubstring,newwsubstring) değiştirme işi yapacğımız zaman kullandığımız bir fonksiyondur.
+let karsilama='Merhaba ahmet,nasılsınız ahmet?'
+let kar = karsilama.replace('ahmet','mehmet')
+let kar1= karsilama.replaceAll('ahmet','mahmut')
+console.log(kar)
+console.log(kar1)
+
+//CharAt()---> indexleme mantığını kullanarak yaptığımız değiştirme işlemini yapar.CharCodeAt() ASCII koduna çevirir
+let uzun='30 günde javascript'
+console.log(uzun.charAt(0),'*******')
+//indexOf()--->Bir substring alarak istediğimiz kelime ya da harfin ilk nerede geçtiğini döndürür yoksa -1 döndürür ve de harf duyarlılığı vardır
+let kelime='30 Days Of JavaScript'
+ console.log(kelime.indexOf('Days'))
+ console.log(kelime.indexOf('d'))
+//lastIndexOf(')----->en son nerede geçiyorsa onu alır
+//concat(substring,substring,substring)---->Birden çok substringi birleştirmek için kullanılır
+//starsWith('substring')---->Eğer istediğmiz ifade ile başlıyorsa true değilse false döndürür
+//endsWİth()---->Yukarıdakinin tam tersi ...... ile bitiyorsa
+//search()--->substring alır ve ilk nerede geçiyorsa oranın indexini döndürür
+//match()---->substring alır ve 
+//Bu ikisinde regex ifadeleri mevcut o yüzden tekrar bakılmalı.regex / ile başlar / ile biter /love/gi g global olarak arar ve i de harf duyarlılığına dikkat etme denir
+//repeat()---->tekrar et istediğimiz strinigi kaç kere tekrar et parametre olarak sayı alır
+//REGEX ÇOK ÖNEMLİ BİR KONU
+
+
+
+//Veri türü kontrolu ve değiştirilmesi
+//String to Int
+// parseInt(),Number(), Plus sign(+)
+parseInt('55')
+console.log(parseInt('5'))
+console.log(parseInt('6.5'))
+
+Number('46')
+console.log(Number('2.1'))
+
+console.log(+'5')
+console.log(typeof(+'5'))//Number stringi numbera çevirmek istediğmizzde kullanılır
+//String to float
+//ParseFloat()---->parseInt()'in almadığı kısmı almak için
+
+//Float to int
+//parseInt()--->ile devam eder
+
+
+//DAY---3
+let isLightOn=true
+let isRaining=false
+let trueValue=5>4
+let falseValue=5<4
+
+console.log(trueValue)
+
+//True olan Değerler
+/*
+Tüm sayılar pozitif ve negatif olan sıfır hariç
+Tüm stringler bosş string hariç ""
+Boolean kendisi de true
+*/
+
+//False olan değerler
+/*
+0
+0n
+null
+undefined
+NaN
+False booleanlar
+Boş stringler
+*/
+
+let name //Değişken oluşturup değer atamazsak değer undefined olur
+//Fonksiyon değer döndürmezse de undefined olur
+
+
+//OPERATÖRLER
+/* 
+= Değer atama
++=, x+=y, x=x+y  aynı şeyler Toplama
+-x, x-=y, x=x-y  Çıkarma
+*= Bunlar için de geçerli
+/=
+%= Mod alma
+**= Kare alma
+*/
+
+
+//KARŞILAŞTIRMA OPERATÖRLERİ
+/*
+== değer eşit mi
+=== type olarak da eşit mi 
+!= eşit değiil mi
+!== veri türü ile birlikte eşit değil mi
+<,>,>=,<= Büyüktür,küçüktür vs.
+*/
+
+//MANTIKSAL OPERATÖRLER
+/*
+&&--->ve
+||--->ya da
+!--->değil   !(4>3)
+*/
+
+
+//ARTIRMA-AZALTMA OPERATÖRÜ
+/*
+let count=6
+count++ , ++count
+count-- , --count
+*/
+
+//TERNARY OPERATÖRÜ
+/*
+Koşul yazmamızı sağlar,Tek satırda koşul yazmamızı sağlar
+KOSUL ? TRUE ise Burası :DEĞİLSE burası
+5<4 ? 'True yazılacak kısım' :'False olacak kısım'
+*/
+
+//ÖNCELİK OPERATÖRÜ
+/*
+Öncelik çarpma bölme şeklinde ilerler,eğer ki biz işlem önceliğini başka trafa çekmek istersek parantez kullanıcaz
+*/
+
+//WİNDOW METODLARI
+/*
+alert()--->şeklinde kullanılır
+*/
+
+//WİNDOW PROMPT
+/*
+prompt('Bir sayı gir',Default değer)
+*/
+
+//WİNDOW CONFİRM
+confirm('Emin Misin?')
+
+let isDelete=confirm('Silmek isediğinize emin misin')
+console.log(
+isDelete ? 'Silme işlemi başarılı' : 'Silme işlemi iptal edildi'
+)
+
+/*
+//TARİH OBJELERİ
+getFullYear()//-->4 digit yıl
+getMonth()//-->0-11 Arası aylar ocak 0 olur
+getDate()//-->1-31 arası gün verir
+getHours()//-->Saat
+getMinutes()//-->Dakika
+getSeconds()//-->Saniye
+getMiliseconds()//-->Milisaniye
+getTime()//--> 1 ocak 1970'ten itibaren geçen zamanaı saniye olarak veriri
+getDay()//--> Haftanın günü 0-6 arası
+
+//ZAMAN OBJESİ OLUŞTURMA
+const datte = new Date() //-->obje başlatma, date türü non-primitive oldu karşılaştırma mümkün değil
+date.getTime()
+*/
+
+
+
+//DAY---4
+//KOŞULLAR
+/*İf'in içinde yazılan şey true ise kod bloğu çalışır */
+if(5>4){
+    console.log('Bu Kod Çalışıyor')
+}
+
+if(5<4){
+    console.log("True ise burası")
+}
+else{
+    console.log("False ise burası")
+}
+
+/*else koşul true değilse çalışacak */
+
+
+let reus = prompt('2+5=?','2+5')
+if(reus==7){
+    console.log("sonuc 7 yazıldığı için burası çalıştı")
+}
+else{
+    console.log("sonuc 7 den farklı yazıldıgı için burası çalışacak")
+}
+/*ikiden fazla koşul(condition) varsa else if kullanılır */
+
+
+//SWİTCH-CASE
+//şartlar sağlanmazsa default'a geçecek
+//kod satır satır yürütüleceği için break  kullanılmalı
+
+let ree = prompt('8*2:?','Buraya yazın!')
+
+switch(ree){
+    case '16':
+        console.log('Doğru sonuç')
+    break
+
+    case '15':
+        console.log('yanlış sonuç')
+    break
+
+    case '14':
+        console.log('yanlış sonuç, 2 oldu ')
+    break
+
+    case '13':
+        console.log('yanlış sonuç , 3 oldu sen cahilsin amk')
+    break
+
+}
+
+//Ternary Operatörü
+console.log(reus == 7 ? 'cevap doğru ': 'yanlış cevap')
+
+
+
+
+//DAY--5
+//DİZİLER
+//Dizilerin içinde objeler de tutulabilir.Objelerin içinde de array tutulabilir bu arada.
+const dizii = Array()
+const diziii = []
+
+let ogr = ['Özkan','Taşkıran','30.12.199',23]
+console.log(ogr.length)
+
+//split() kullanılarak array oluşturmak mümkündür
+let nav='Özkan'
+console.log(nav.split(''))
+
+//Dizi elemanlarına index kullanılarak ulaşabiliriz
+//Son elemana length-1 ile ulaşılır
+
+
+//diziler nonprimitivedirler bu yuzden değiştirilebilirler
+let dzi = ['Özkan','Taşkıran','30.12.1999','Doğubeyazıt']
+console.log(dzi)
+dzi[3]='Ankara'
+console.log(dzi)
+
+//Boş ve eleman sayısı belli olan bir dizi oluşturmak istersek
+let d = Array(5)
+//bu diziyi static bir değerle doldurmak istersek
+let dd = Array(8).fill('X')
+console.log(dd)
+
+//iki diziyi birleştirmek istediğimzide concat metodu kullanılır
+let ddd = [5,7,8,9,6]
+let dddd = [1,2,3,4,0]
+console.log(ddd.concat(dddd)) // dddd,yenidizi de olabilri
+console.log(dddd.concat(ddd,['A','B']))
+
+//dizi uzunlugu diziadı.length ile alınır
+//diziadı.indexOf('') arayacağımız şeyi ararız hangi indexte olduğuna bakılır eğer yoksa -1 döner
+//dizinin içinde istedğimiz elemanın bulunup bulunmadığını if else ile ve ternary operatörü ile kontrol edebiliriz
+//içermemesi -1 demektir
+//dizinin en son indexini almak istedğimizde lastIndexOf kullanabilriz
+//dizinin içinde aradığımız değerin olup olmamasını includes() metodu ile de yapabilriz ama bu true ya da false döndürecektir.Büyük harfe duyarlıdır
+
+console.log(typeof ddd) //bunun sonucu obje olarak gözükecek
+console.log(Array.isArray(ddd)) //True ya da false döndürecek olan bu
+
+
+//Bir diziyi stringr çevirmek mümkündür toString ile
+let aa = ['Ankara','İstanbul','Antalya']
+console.log(aa.toString()) //
+
+//Bir dizi elemanlarını istediğmiz karakterlere göre birleştirmek mümkündür
+
+let fd = ['Özkan','Mehmet','Metin','Kemal']
+console.log(fd.join())
+console.log(fd.join(''))
+console.log(fd.join(' '))
+
+//Bir dizinin bir index aralığını almak son indexi almaz
+let gg = [1,2,3,4,5,6,7,8,9,10]
+console.log(gg.slice(0,4))
+
+
+//splice() metodu ile kaçıncı indisten kaça kadar silinecek ve yerlerine ne yazılacak
+
+let hh = [1,4,7,8,5,2,9,6,3]
+console.log(hh.splice(0,3))
+console.log(hh)
+
+//Push() metodu ile bir dizinin sonuna eleman ekleyebiliyoruz
+let amk = [1,2,3,4,5]
+console.log(amk)
+amk.push('Yakup')
+console.log(amk)
+//Unshift() ile de dizinin başına eleman ekleyebiliriz Push() ile yaptığımız işi yapıyor
+
+//pop() metodu ile son değeri siler fakat silerken gösterir de yani onu bir değişkene atabilriz
+let ff = ['Ahmet','Halil','Jack','Jerome']
+cikan = ff.pop()
+console.log(ff)
+console.log(cikan)
+//Shift() Metodu ile baştan çıkarabilriz bu pop() ile aynı işi yapıyor
+
+
+//Dizinin elemanlarını baştan sona sıralamak için reverse kullanılır
+let vv =[1,2,3,4,5,6,7,8,9]
+console.log(vv.reverse())
+
+
+//Diziyi A-Z sıralamak istersek diziadi.sort() kullanılır
+
+//Dizinin içinde farklı veri türleri bulunabilir dizi de buluanbilir
+
+
+
+//DAY--6
+//DÖNGÜLER
+
+//For yapısı
+/*for(başlangıç değeri, koşul, artırma/azaltma){} */
+
+for(let i=0;i<=10;i++){
+    console.log(i+2)
+}
+
+
+
+
+for(let j=0;j<=10;j++){
+    console.log(`${j}*${j} =${j*j}`)
+}
+
+
+
+
+let ddizi=['Özkan','Metin','Kemal','Faik','Mehmet','Onur',]
+for (let k=0;k<ddizi.length;k++){
+    console.log(ddizi[k])
+}
+
+
+
+let df=[7,11,14,13,10,21,23,12]
+let t=new Array()
+for(let y=0;y<df.length;y++){
+    t.push(df[y]*2)
+}
+console.log(t)
+
+
+
+//WHİLE VE DO-WHİLE DÖNGÜSÜ
+let mj=0
+while(mj<=10){
+    console.log(mj)
+    mj++
+}
+
+
+//do-while'ın while'dan farkı do'nun içi bir kere çalışacak
+let jm=0
+do{
+    console.log('Merhaba')
+    jm++
+}while(jm<10){
+}
+
+
+
+//Diziler için for of dögüsü kullanılır
+//Dizinin indexleri ile uğraşmıyoruz burada direkt değerleri alıyoruz
+/*for(let sayi of dizi){console.log(sayi)} */
+let idizi = [1,2,4,6,7,9,8,5,21]
+
+for(let sayii of idizi){
+    console.log(sayii)
+}
+
+
+//döngülerde istediğimiz bir yerde sonlansın istiyorsak break kullanılır
+let isimler = ['Özkan','Özcan','Gökan','Sevkan','Oktay','Mahmut']
+for(let l=0;l<isimler.length;l++){
+    console.log(isimler[l])
+    if(isimler[l]=='Sevkan'){
+        break
+    }
+}
+//continue ile de istenilen iterasyonun atlatılması sağlanır
+for(let p=0;p<isimler.length;p++){
+    if(isimler[p]=='Sevkan'){
+        console.log(`${isimler[p]}`)
+        continue
+    }
+    console.log(isimler[p])
+}
+//Hemen yukarıdakinin daha güzel yapılmış hali
+for(let isims of isimler){
+    if(isims=='Sevkan'){
+        console.log(`${isims} es geçildi`)
+        continue
+    }
+    console.log(`${isims}`)
+}

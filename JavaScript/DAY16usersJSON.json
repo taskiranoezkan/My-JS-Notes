@@ -1,0 +1,24 @@
+[
+    {
+        "name":"Özcan",
+        "surname":"Taşkıran",
+        "skills":[
+            {
+                "Front End":"['HTML','CSS','JAVASCRİPT']"
+            },
+            {
+                "Backend":"['NODEJS','PHP','PYTHON']"
+            }
+        ],
+        "property":[1.76,75]
+        
+    },
+    {
+        "name":"Musa",
+        "surname":"Serçe"
+    },
+    {
+        "name":"Ferhat",
+        "surname":"Kumlu"
+    }
+]
