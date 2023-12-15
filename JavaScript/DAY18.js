@@ -144,13 +144,13 @@ getPosts()
 
 
 
-// FARKLI VİDEO
+//! ENES BAYRAM'DAN ALINAN KISIM
 // Promise Callback'lerin alternatifidir
 // Callback yerine promise'ları kulllanıp bu asenkron yapıları senkron yapılara çevirerek yönetecez
 // PROMİSE :: Söz demek
 
 // Promise istek atılır oradan veri beklenir
-// İstek işlenmeye başlanınca pending : Bekleme
+// pending : İstek işlenmeye başlanınca  Bekleme
 // fullfield : İşlem başarılı DİĞER ADI RESOLVE'DUR
 // rejected : Reddedildi
 
@@ -179,6 +179,12 @@ const promise1 = new Promise((resolve, reject) => {
     }
 })
 
+console.log(promise1)
+
+
+
+
+
 // Promise'ın 3 farklı durumu vardır
 // HANDLE :: Halletmek
 // Promise'i yakalamak
@@ -186,22 +192,22 @@ const promise1 = new Promise((resolve, reject) => {
 
 
 
-let check1 = true
+let check1 = false
 function createPromise() {
     return new Promise((resolve, reject) => {
-        if(check1) {
-            resolve(`Promise'de herhangi bir sikinti yoktur`)
+        if (check1) {
+            resolve(`Promise'de herhangi bir sıkıntı yoktur`)
         } else {
             reject('Sıkıntı büyük')
         }
-     })
+    })
 }
 
-createPromise().then((respon)=>{
+createPromise().then((respon) => {
     console.log(respon)
-}).catch((err)=>{
+}).catch((err) => {
     console.log(err)
-}).finally((final)=>{
+}).finally((final) => {
     console.log('Her zaman çalışır ')
 })
 
@@ -209,32 +215,90 @@ createPromise().then((respon)=>{
 // ASENKRON YAPILARI SENKRON YAPILARA ÇEVİRMEK İÇİN KULLANIRIZ : CALLBACKLERİN ALTERNATİFİ VEYA BİR ÜST HALİ DE DENEBİLİR
 
 
-// ÖRNEK  PROMİSE + XMLHTTPREQUEST
+//? ÖRNEK  PROMİSE + XMLHTTPREQUEST
 
+//! Güzel Örnek
 
-// Promise.all --->
-
-function readUser(url){
-    return new Promise((resolve,reject)=>{
+function readUser(url) {
+    return new Promise((resolve, reject) => {
         const xml = new XMLHttpRequest();
         try {
-            xml.addEventListener("readystatechange", ()=>{
-                if(xml.readyState===4 && xml.status===200){
+            xml.addEventListener("readystatechange", () => {
+                if (xml.readyState === 4 && xml.status === 200) {
                     resolve(JSON.parse(xml.responseText))
                 }
             })
         } catch (error) {
             reject(error)
         }
-        xml.open("GET",url);
+        xml.open("GET", url);
         xml.send();
     })
 }
 
 
 readUser("DAY16usersJSON.json")
-.then((response)=>console.log(response))
-.catch((error)=>console.log(error))
+    .then((response) => console.log(response))
+    .catch((error) => console.log(error))
+
+
+
+
+
+function getUsers(url) {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange", () => {
+            try {
+                if (xhr.status === 200 && xhr.readyState === 4) {
+                    resolve(JSON.parse(xhr.responseText));
+                }
+            } catch (error) {
+                reject(error)
+            }
+        })
+        xhr.open("GET", url)
+        xhr.send()
+    })
+}
+
+
+
+function getCommentss(url) {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange", () => {
+            try {
+                if (xhr.status === 200 && xhr.readyState === 4) {
+                    resolve(JSON.parse(xhr.responseText));
+                }
+            } catch (error) {
+                reject(error)
+            }
+        })
+        xhr.open("GET", url)
+        xhr.send()
+    })
+}
+
+
+// Birden fazla then() yapısının beraber kullanımı
+getUsers("https://jsonplaceholder.typicode.com/users/3")
+    .then((data) => {
+        //console.log(data)
+        // data.forEach(user => {
+        //     console.log(user.name)
+        // });
+        console.log(data)
+        getCommentss(`https://jsonplaceholder.typicode.com/comments/${data.id}`)
+            .then((res) => {
+                console.log(res)
+            })
+    })
+    .catch((err) => console.log(err))
+    .finally(() => {
+        //her türlü işlem sonucu bildirimi mesela mail gönderimi
+    })
 
 
 
@@ -243,25 +307,33 @@ readUser("DAY16usersJSON.json")
 
 
 
-const p1=Promise.resolve('birinci promise başarılı')
-const p2=Promise.resolve('iirinci promise başarılı')
-const p3=new Promise((resolve,reject)=>{
+
+
+
+
+
+
+
+
+// Direkt resolve'lu promise oluşturabiliriz
+
+const p1 = Promise.resolve('birinci promise başarılı')
+const p2 = Promise.resolve('iirinci promise başarılı')
+const p3 = new Promise((resolve, reject) => {
     resolve("üçüncü promise başarılı")
 })
 
-const p4=Promise.reject('Hata var reis')
+// const p4 = Promise.reject('Hata var reis')
 
 
 
-// Promise.all
+// Promise.all Anlatımı
 // bütün promisler başarılı ise then'e girer en az bir tanesi başarısız ise catch'e girer 
-Promise.all(p1,p2,p3)
-.then((res)=>console.log(res))
-.catch((err)=>console.log(err))
+Promise.all([p1, p2, p3,])
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err))
 
 // Tüm promise'leri kontrol etmek istediğimizde kullanıırız
-
-
 
 
 
