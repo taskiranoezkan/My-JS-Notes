@@ -1,38 +1,60 @@
+// NOT:: BURADA TODO ARAMASI YAPILMASI VERİTABANI BAĞLANTISI MÜMKÜNKEN YAPILABİLRİ AMA BU TARZ BASİT ÖRNEKLERDE LOCALSTORAGE KULLANILABİLİR BEN KULLANMADIM
+
+
 document.addEventListener('DOMContentLoaded', function () {
-    const todoAddForm = document.getElementById('todoAddForm');
-    const todoName = document.getElementById('todoName');
-    const todoList = document.querySelector('.list-group');
-    const todoClearButton = document.getElementById('todoClearButton');
-  
-    todoAddForm.addEventListener('submit', function (e) {
-      e.preventDefault(); // Formun otomatik olarak gönderilmesini engeller
-  
-      const newTodoText = todoName.value.trim();
-  
-      if (newTodoText !== '') {
-        const li = document.createElement('li');
-        li.className = 'list-group-item d-flex justify-content-between';
-        li.textContent = newTodoText;
-  
-        const deleteLink = document.createElement('a');
-        deleteLink.className = 'delete-item';
-        deleteLink.innerHTML = '<i class="fa fa-remove"></i>';
-        deleteLink.addEventListener('click', function () {
-          li.remove();
-        });
-  
-        li.appendChild(deleteLink);
-        todoList.appendChild(li);
-  
-        todoName.value = ''; // Giriş alanını temizler
+  const todoName = document.querySelector('#todoName');
+  const todoAddForm = document.querySelector('#todoAddForm');
+  const todoSearch = document.querySelector('#todoSearch');
+  const list_group = document.querySelector(".list-group");
+  const list_group_items = document.querySelectorAll('.list-group-item');
+  const todoClearButton = document.querySelector('#todoClearButton');
+
+  runEvents();
+
+  function runEvents() {
+    todoAddForm.addEventListener('submit', add);
+    list_group.addEventListener('click', deleteItem);
+    todoClearButton.addEventListener('click', clearAllTodos);
+  }
+
+  let sayac = 0;
+
+  function add(e) {
+    e.preventDefault();
+
+    if (todoName.value.trim() !== '') {
+      if (sayac < 4) {
+        // Eğer sayac 4'ten küçükse, mevcut list_group_items üzerinde değişiklik yap
+        let newListItem = document.createElement('li');
+        newListItem.className = 'list-group-item d-flex justify-content-between';
+        newListItem.innerHTML = todoName.value + '<a href="#" class="delete-item"><i class="fa fa-remove"></i></a>';
+        list_group_items[sayac].parentNode.replaceChild(newListItem, list_group_items[sayac]);
+      } else {
+        // Eğer sayac 4 veya daha büyükse, yeni bir eleman oluştur ve listeye ekle
+        let newListItem = document.createElement('li');
+        newListItem.className = 'list-group-item d-flex justify-content-between';
+        newListItem.innerHTML = todoName.value + '<a href="#" class="delete-item"><i class="fa fa-remove"></i></a>';
+        list_group.appendChild(newListItem);
       }
-    });
-  
-    todoClearButton.addEventListener('click', function () {
-      const todoItems = document.querySelectorAll('.list-group-item');
-      todoItems.forEach(function (item) {
-        item.remove();
-      });
-    });
-  });
-  
+      // sayac'ı artır
+      sayac++;
+      // Input'u temizle
+      todoName.value = '';
+    } else {
+      alert('Todo boş olamaz!');
+    }
+  }
+
+  function deleteItem(e) {
+    if (e.target.classList.contains('fa-remove')) {
+      const listItem = e.target.closest('.list-group-item');
+      listItem.remove();
+    }
+  }
+
+  function clearAllTodos() {
+    while (list_group.firstChild) {
+      list_group.removeChild(list_group.firstChild);
+    }
+  }
+});
